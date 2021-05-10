@@ -17,9 +17,20 @@ defaultTasks 'run'
 
 repositories {
   mavenCentral()
+  maven {
+      name = "Koma Packages"
+      url = uri("https://maven.pkg.github.com/kyonifer/koma")
+      credentials {
+        username = "kyonifer"
+        password = "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"
+      }
+  }
 }
 
 dependencies {
+  compile group: "com.kyonifer", name:"koma-core-ejml", version: "0.12.1"
+  compile group: "com.kyonifer", name:"koma-plotting", version: "0.12.1"
+
   compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
   testCompile 'junit:junit:4.11'
   testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
